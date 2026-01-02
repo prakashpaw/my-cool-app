@@ -105,7 +105,7 @@
         </div>
 
         <div class="footer">
-            Deployed by <code>prakashpaw</code> via SSH keys<br>
+            Deployed by <code>This has been deployed by Prakash Pawar, He is learning DevOps to it core</code> via SSH keys<br>
             Current Context: <strong>/my-cool-app</strong>
         </div>
     </div>
