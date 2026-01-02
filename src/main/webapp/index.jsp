@@ -90,7 +90,7 @@
             <div class="pulse"></div>
             <span style="color: #22c55e; font-weight: 600; letter-spacing: 1px;">SYSTEM ONLINE</span>
         </div>
-        <h1>DevOps Pipeline Alpha</h1>
+        <h1>DevOps Pipeline Fist one by Prakash</h1>
         <p style="color: #94a3b8;">Containerized Deployment Successful</p>
         
         <div class="stats">
@@ -105,7 +105,7 @@
         </div>
 
         <div class="footer">
-            Deployed by <code>This has been deployed by Prakash Pawar, He is learning DevOps to it core</code> via SSH keys<br>
+            Deployed by <code>This has been deployed by Prakash Pawar, He is learning DevOps to it's core</code> via SSH keys<br>
             Current Context: <strong>/my-cool-app</strong>
         </div>
     </div>
