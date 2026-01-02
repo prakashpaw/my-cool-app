@@ -13,8 +13,8 @@
 </head>
 <body>
     <div class="card">
-        <h1>🚀 Deployment Successful!</h1>
-        <p>Your Java Web App is now running on <strong>Apache Tomcat</strong>.</p>
+        <h1>🚀 This Deployment Successful!</h1>
+        <p>Your Java fucking Web App is now running on <strong>Apache Tomcat</strong>.</p>
         <p class="status">Pipeline Status: All Green ✅</p>
         <div class="footer">Built with Jenkins & Maven | Deployed via Docker</div>
     </div>
