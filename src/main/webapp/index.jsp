@@ -88,7 +88,7 @@
     <div class="dashboard">
         <div class="status-header">
             <div class="pulse"></div>
-            <span style="color: #22c55e; font-weight: 600; letter-spacing: 1px;">SYSTEM ONLINE</span>
+            <span style="color: #22c55e; font-weight: 600; letter-spacing: 1px;">Tomcat SYSTEM ONLINE</span>
         </div>
         <h1>DevOps Pipeline Fist one by Prakash</h1>
         <p style="color: #94a3b8;">Containerized Deployment Successful</p>
@@ -99,7 +99,7 @@
                 <div class="stat-value">Tomcat 9 / Docker</div>
             </div>
             <div class="stat-box">
-                <div class="stat-label">Build Tool</div>
+                <div class="stat-label">Build Tool ***************</div>
                 <div class="stat-value">Maven / Jenkins</div>
             </div>
         </div>
