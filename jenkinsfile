@@ -2,60 +2,61 @@ pipeline {
     agent any
 
     tools {
-        // Ensure 'Maven' and 'Java' match the names in Global Tool Configuration
-        maven 'Maven'
+        // Jenkins will automatically download these into /var/jenkins_home/tools/
+        // provided you checked "Install automatically" in the Tools UI.
+        maven 'Maven' 
         jdk 'Java'
     }
 
     stages {
         stage('Checkout Source') {
             steps {
-                // Pull code from your GitHub repository
+                // Pulls code from your GitHub repository
                 git 'https://github.com/prakashpaw/my-cool-app.git'
             }
         }
 
         stage('Maven Build') {
             steps {
-                // Build the WAR file
+                // Runs build. Jenkins handles the PATH for this tool automatically.
                 sh 'mvn clean package'
             }
         }
 
         stage('Deploy to Docker Host') {
             steps {
-                // Use Publish Over SSH to send artifact and run commands
+                // Transfer the .war and execute Docker commands on the Ubuntu host
                 sshPublisher(publishers: [
                     sshPublisherDesc(
-                        configName: 'DockerHost', // Must match name in System Config
+                        configName: 'DockerHost', // Must match 'Name' in System Config
                         transfers: [
                             sshTransfer(
                                 cleanRemote: false,
-                                excludes: '',
                                 execCommand: '''
                                     cd /opt/docker;
                                     docker rm -f registerapp || true;
                                     docker build -t regapp:v1 .;
                                     docker run -d --name registerapp -p 8087:8080 regapp:v1
-                                ''', // Commands to rebuild container
+                                ''',
                                 execTimeout: 120000,
-                                flatten: false,
-                                makeEmptyDirs: false,
-                                noDefaultExcludes: false,
-                                patternSeparator: '[, ]+',
-                                remoteDirectory: '/opt/docker', // Path on Ubuntu Docker host
-                                remoteDirectorySDF: false,
-                                removePrefix: 'webapp/target', // Path to your WAR file
+                                remoteDirectory: '/opt/docker', 
+                                removePrefix: 'webapp/target', 
                                 sourceFiles: 'webapp/target/*.war'
                             )
                         ],
-                        usePromotionTimestamp: false,
-                        useWorkspaceInPromotion: false,
                         verbose: true
                     )
                 ])
             }
         }
     }
-}
 
+    post {
+        success {
+            echo 'Deployment Finished Successfully!'
+        }
+        failure {
+            echo 'Deployment Failed. Check Console Output.'
+        }
+    }
+i}
