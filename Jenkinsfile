@@ -59,9 +59,4 @@ pipeline {
             echo 'Deployment Failed. Check Console Output.'
         }
     }
-<<<<<<< HEAD
 }
-=======
-}
-
->>>>>>> d4d7a92 (jenk file)
