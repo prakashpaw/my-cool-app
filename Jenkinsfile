@@ -62,6 +62,6 @@ pipeline {
 <<<<<<< HEAD
 }
 =======
-i}
+}
 
 >>>>>>> d4d7a92 (jenk file)
