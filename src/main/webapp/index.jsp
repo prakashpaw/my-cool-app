@@ -1,113 +1,54 @@
+
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>DevOps Pipeline | Production</title>
+    <title>Welcome to the DevOps Dungeon</title>
     <style>
-        :root {
-            --primary: #00f2fe;
-            --secondary: #4facfe;
-            --bg: #0f172a;
-            --card-bg: rgba(30, 41, 59, 0.7);
-        }
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Inter', -apple-system, sans-serif;
-            background: radial-gradient(circle at top right, #1e293b, #0f172a);
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-        }
-        .dashboard {
-            background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
-            padding: 40px;
-            width: 450px;
+            background-color: black;
+            color: red;
+            font-family: 'Courier New', monospace;
             text-align: center;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        }
-        .status-header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        .pulse {
-            width: 12px;
-            height: 12px;
-            background: #22c55e;
-            border-radius: 50%;
-            box-shadow: 0 0 0 rgba(34, 197, 94, 0.4);
-            animation: pulse-green 2s infinite;
-        }
-        @keyframes pulse-green {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+            padding-top: 100px;
         }
         h1 {
-            font-size: 2rem;
-            margin: 0;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -1px;
+            font-size: 60px;
+            text-shadow: 2px 2px 10px #ff0000;
+            animation: flicker 1s infinite;
         }
-        .stats {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin: 30px 0;
+        @keyframes flicker {
+            0% { opacity: 1; }
+            50% { opacity: 0.3; }
+            100% { opacity: 1; }
         }
-        .stat-box {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 15px;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+        .warning {
+            font-size: 24px;
+            color: #ffcc00;
+            margin-top: 20px;
+            animation: pulse 1.5s infinite;
         }
-        .stat-label { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; }
-        .stat-value { font-size: 1rem; font-weight: bold; margin-top: 5px; color: var(--primary); }
-        .footer {
-            margin-top: 30px;
-            font-size: 0.8rem;
-            color: #64748b;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 20px;
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
         }
-        code { color: #f472b6; }
+        .tools {
+            margin-top: 50px;
+            font-size: 20px;
+            color: #00ff00;
+        }
     </style>
 </head>
 <body>
-    <div class="dashboard">
-        <div class="status-header">
-            <div class="pulse"></div>
-            <span style="color: #22c55e; font-weight: 600; letter-spacing: 1px;">Tomcat SYSTEM ONLINE</span>
-        </div>
-        <h1>DevOps Pipeline Fist one by Prakash</h1>
-        <p style="color: #94a3b8;">Containerized Deployment Successful</p>
-        
-        <div class="stats">
-            <div class="stat-box">
-                <div class="stat-label">Environment</div>
-                <div class="stat-value">Tomcat 9 / Docker</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-label">Build Tool ***************</div>
-                <div class="stat-value">Maven / Jenkins</div>
-            </div>
-        </div>
-
-        <div class="footer">
-            Deployed by <code>This has been deployed by Prakash Pawar, He is learning DevOps to it's core</code> via SSH keys<br>
-            Current Context: <strong>/my-cool-app</strong>
-        </div>
+    <h1>☠ DEVOPS IS COMING FOR YOU ☠</h1>
+    <div class="warning">Prepare for Jenkins, Docker, Kubernetes... and beyond!</div>
+    <div class="tools">
+        <p>They say: <strong>"Just one command"</strong>... but then comes YAML, CI/CD, and pipelines!</p>
+        <p>Can you survive the <span style="color:#ff0000;">infinite logs</span> and <span style="color:#ffcc00;">cryptic errors</span>?</p>
+    </div>
+    <div style="margin-top:50px;">
+        <img src="https://cdn.pixabay.com/photo/2016/03/31/19/56/horror-1297226_960_720.png" alt="Scary DevOps" width="300">
     </div>
 </body>
 </html>
