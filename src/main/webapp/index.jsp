@@ -41,7 +41,7 @@
     </style>
 </head>
 <body>
-    <h1>☠ DEVOPS IS COMING FOR YOU ☠</h1>
+    <h1>☠ DEVOPS IS gonna COMING FOR YOU ☠</h1>
     <div class="warning">Prepare for Jenkins, Docker, Kubernetes... and beyond!</div>
     <div class="tools">
         <p>They say: <strong>"Just one command"</strong>... but then comes YAML, CI/CD, and pipelines!</p>
